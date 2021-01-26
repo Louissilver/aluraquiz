@@ -5,8 +5,7 @@ import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
-import Head from 'next/head';
-import Page from '../src/components/Page';
+import Head from '../src/components/Head'
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -22,13 +21,7 @@ const QuizContainer = styled.div`
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Sidekick Quiz</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" type="image/png" href={db.icon} />
-      </Head>
-      <Page/>
+      <Head title={db.title} bg={db.bg} />
       <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
           <QuizLogo />
