@@ -21,34 +21,39 @@ const QuizContainer = styled.div`
 export default function Home() {
   return (
     <>
-    <Head>
+      <Head>
         <title>Sidekick Quiz</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:image" content={db.bg}/>
+        <meta property="og:title" content="Quiz do ajudante de herói." />
+        <meta property="og:site_name" content="SidekickQuiz" />
+        <meta property="og:image" content={db.bg} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="600" />
         <link rel="icon" type="image/png" href={db.icon} />
       </Head>
-    <QuizBackground backgroundImage={db.bg}>
-      <QuizContainer>
-        <QuizLogo />
-        <Widget>
-          <Widget.Header>
-            <h1>{db.title}</h1>
-          </Widget.Header>
-          <Widget.Content>
-            <p>{db.description}</p>
-          </Widget.Content>
-        </Widget>
-        <Widget>
-          <Widget.Content>
-            <h1>Quizes da galera</h1>
-            <p>Bora testar seu conhecimento em outras áreas?!</p>
-          </Widget.Content>
-        </Widget>
-        <Footer />
-      </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/Louissilver/aluraquiz"/>
-    </QuizBackground>
+      <QuizBackground backgroundImage={db.bg}>
+        <QuizContainer>
+          <QuizLogo />
+          <Widget>
+            <Widget.Header>
+              <h1>{db.title}</h1>
+            </Widget.Header>
+            <Widget.Content>
+              <p>{db.description}</p>
+            </Widget.Content>
+          </Widget>
+          <Widget>
+            <Widget.Content>
+              <h1>Quizes da galera</h1>
+              <p>Bora testar seu conhecimento em outras áreas?!</p>
+            </Widget.Content>
+          </Widget>
+          <Footer />
+        </QuizContainer>
+        <GitHubCorner projectUrl="https://github.com/Louissilver/aluraquiz" />
+      </QuizBackground>
     </>
   );
 }
