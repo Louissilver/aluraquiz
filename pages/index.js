@@ -28,7 +28,7 @@ export default function Home() {
         <meta property="og:title" content="Quiz do ajudante de herói." />
         <meta property="og:site_name" content="SidekickQuiz" />
         <meta property="og:image" content={db.bg} />
-        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="600" />
         <link rel="icon" type="image/png" href={db.icon} />
