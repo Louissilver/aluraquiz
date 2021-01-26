@@ -6,6 +6,7 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
 import Head from 'next/head';
+import Page from '../src/components/Page';
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -25,14 +26,9 @@ export default function Home() {
         <title>Sidekick Quiz</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:title" content="Quiz do ajudante de herói." />
-        <meta property="og:site_name" content="SidekickQuiz" />
-        <meta property="og:image" content={db.bg} />
-        <meta property="og:image:type" content="image/jpg" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="600" />
         <link rel="icon" type="image/png" href={db.icon} />
       </Head>
+      <Page/>
       <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
           <QuizLogo />
