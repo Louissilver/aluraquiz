@@ -1,5 +1,6 @@
 import { NextSeo } from 'next-seo';
 import db from '../../../db.json';
+import background from '../../../assets/background.jpg'
 
 const Page = () => (
   <>
@@ -12,7 +13,7 @@ const Page = () => (
         description: 'Quiz do ajudante de herói.',
         images: [
           {
-            url: `${db.bg}`,
+            url: `${background}`,
             width: 800,
             height: 600,
           },
