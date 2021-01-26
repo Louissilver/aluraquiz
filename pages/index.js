@@ -5,6 +5,7 @@ import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
+import Head from 'next/head';
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -19,25 +20,35 @@ const QuizContainer = styled.div`
 
 export default function Home() {
   return (
+    <>
+    <Head>
+        <title>Sidekick Quiz</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:image" content={db.bg}/>
+        <link rel="icon" type="image/png" href={db.icon} />
+      </Head>
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>Teste</h1>
+            <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Texto de teste</p>
+            <p>{db.description}</p>
           </Widget.Content>
         </Widget>
         <Widget>
           <Widget.Content>
-            <p>Texto de teste</p>
+            <h1>Quizes da galera</h1>
+            <p>Bora testar seu conhecimento em outras áreas?!</p>
           </Widget.Content>
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner />
+      <GitHubCorner projectUrl="https://github.com/Louissilver/aluraquiz"/>
     </QuizBackground>
+    </>
   );
 }
