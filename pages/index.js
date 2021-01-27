@@ -37,6 +37,7 @@ export default function Home() {
                     setName(event.target.value);
                   }}
                   placeholder="Qual o seu nome de herói?"
+                  name="name"
                   value={name}
                 />
 
