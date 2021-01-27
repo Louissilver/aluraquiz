@@ -132,6 +132,7 @@ export default function QuizPage() {
               <Widget.Content>
                 <form onSubmit={function (event) {
                   event.preventDefault();
+                  setRespostasCorretas(0);
                   router.push('/');
                 }} >
                   <Button type="submit">Voltar</Button>
