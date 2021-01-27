@@ -128,7 +128,7 @@ export default function QuizPage() {
 
           {screenState === screenStates.RESULT && (
             < Widget >
-              <Widget.Header>Você acertou {respostasCorretas} questões, parabéns!</Widget.Header>
+              <Widget.Header>Você acertou {respostasCorretas} questões de {totalQuestions}, parabéns!</Widget.Header>
               <Widget.Content>
                 <form onSubmit={function (event) {
                   event.preventDefault();
