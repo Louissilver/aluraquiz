@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
@@ -11,6 +10,8 @@ import Head from '../src/components/Head';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import { useRouter } from 'next/router';
+import Link from '../src/components/Link';
+import { motion } from 'framer-motion'
 
 
 export default function Home() {
@@ -22,7 +23,19 @@ export default function Home() {
       <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
           <QuizLogo />
-          <Widget>
+          <Widget
+          as={motion.section}
+          transition={{
+            delay: 0,
+            duration: 0.8
+          }}
+          variants={{
+            show: {opacity: 1, y: '0'},
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+          >
             <Widget.Header>
               <h1>{db.title}</h1>
             </Widget.Header>
@@ -45,10 +58,38 @@ export default function Home() {
               </form>
             </Widget.Content>
           </Widget>
-          <Widget>
+          <Widget
+          as={motion.section}
+          transition={{
+            delay: 0.5,
+            duration: 0.8
+          }}
+          variants={{
+            show: {opacity: 1, y: '0'},
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+          >
             <Widget.Content>
               <h1>Quizes da galera</h1>
-              <p>Bora testar seu conhecimento em outras áreas?!</p>
+              <ul>
+                
+                {db.external.map((linkExterno) => {
+                  const [projectName, user] = linkExterno
+                  .replace(/\//g, '')
+                  .replace('https:', '')
+                  .replace('.vercel.app', '')
+                  .split('.');
+                  return (
+                    <li key={user}>
+                      <Widget.Topic as={Link} href={`/quiz/${projectName}___${user}`}>
+                        {`${user}/${projectName}`}
+                      </Widget.Topic>
+                    </li>
+                  )
+                })}
+              </ul>
             </Widget.Content>
           </Widget>
           <Footer />

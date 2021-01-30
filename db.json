@@ -28,7 +28,10 @@
       }
     ],
     "external": [
-      ""
+      "https://aluraquiz-base.alura-challenges.vercel.app/",
+      "https://pato-quiz-nextjs.theedouglasam.vercel.app/",
+      "https://quiz-cavaleiro-zodiaco.vercel.app/",
+      "https://alura-quiz-lolzin-base.felipegomesoliveira.vercel.app/"
     ],
     "theme": {
       "colors": {
